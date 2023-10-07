@@ -1,0 +1,2 @@
+DEFAULT_NAME_FILE_ENV = ".env"
+DEFAULT_NAME_FILE_CONFIG = "config.py"

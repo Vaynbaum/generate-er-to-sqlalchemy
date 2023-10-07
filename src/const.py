@@ -1,0 +1,11 @@
+TABULATION = "    "
+
+DEFAULT_APP_NAME = "app"
+DEFAULT_DIR_MODELS = "models"
+DEFAULT_SRC_PATH = "src"
+DEFAULT_DATABASE_PATH = "database"
+DEFAULT_MODELS_PATH = "models"
+
+INIT = "init"
+CREATE_MODEL = "create_model"
+ACTIONS = [INIT, CREATE_MODEL]
