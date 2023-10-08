@@ -3,19 +3,22 @@ from src.interface import ArgConfig
 
 
 class MainController:
-    def __init__(self, handlers: dict[IHandler]):
-        self.__handlers = handlers
+    def __init__(self, handlers: list[IHandler]):
+        self.__handlers = {h.action: h for h in handlers}
+
+    def get_actions(self):
+        return [k for k in self.__handlers.keys()]
 
     def handle(self, args):
         config = ArgConfig(
-            add_config_file=args.config,
-            add_base_file=args.base,
-            app_name=args.name,
             action=args.action,
+            app_path=args.app_path,
+            dir_database=args.dir_database,
             er_file=args.er_file,
-            name_page=args.page_name,
+            page_name=args.page_name,
         )
         if config.action:
             handler = self.__handlers.get(config.action, None)
             if handler:
-                handler.handle(config)
+                msg = handler.handle(config)
+            print(msg)

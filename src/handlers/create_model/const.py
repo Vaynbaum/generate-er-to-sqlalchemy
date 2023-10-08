@@ -1,1 +1,0 @@
-DEFAULT_NAME_PAGE = "Page-1"

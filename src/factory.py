@@ -1,25 +1,16 @@
 from src.const import *
 from src.main_controller import MainController
 from src.handlers.init import *
-from src.handlers.create_model import *
+from src.handlers.create import *
 
 
 def create_model_handler():
-    return CreateModelHandler(DrawERParser())
+    return CreateModelHandler(DrawERParser(), SQLAlchemyModelCreater())
 
 
 def create_init_handler():
-    return InitHandler(
-        [
-            BaseInitHandler(),
-            EnvInitHandler(),
-            ConfigInitHandler(),
-            InitFileInitHandler(),
-        ]
-    )
+    return InitHandler()
 
 
 def create_main_controller():
-    return MainController(
-        {INIT: create_init_handler(), CREATE_MODEL: create_model_handler()}
-    )
+    return MainController([create_init_handler(), create_model_handler()])

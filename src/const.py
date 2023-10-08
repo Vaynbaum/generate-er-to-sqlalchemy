@@ -1,11 +1,11 @@
-TABULATION = "    "
+NAME_FILE_INI = "gemod.ini"
+NAME_FILE_BASE = "base.py"
 
-DEFAULT_APP_NAME = "app"
-DEFAULT_DIR_MODELS = "models"
-DEFAULT_SRC_PATH = "src"
-DEFAULT_DATABASE_PATH = "database"
-DEFAULT_MODELS_PATH = "models"
+KW_APP="app"
+KW_BASE="base"
+KW_INIT_PY="init_py"
+KW_AUTO="auto"
+KW_USER="user"
 
-INIT = "init"
-CREATE_MODEL = "create_model"
-ACTIONS = [INIT, CREATE_MODEL]
+ACTION_SUCCESS = "Action completed"
+NOT_FOUND_PATH_APP = "The path to the application is not specified"
