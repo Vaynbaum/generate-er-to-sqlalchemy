@@ -1,3 +1,4 @@
+import re
 from src.handlers.create.interface import FieldDiagramSchema
 from src.handlers.create.utils import clear_str_from_tag
 
@@ -6,8 +7,8 @@ class DrawERFieldProccesser:
     def proccess(self, field: dict):
         value = field["data"]["value"]
         value = clear_str_from_tag(value)
-        value = value.replace(":", ",")
-        values = value.split(",")
+        value = re.sub(r'[, :]', " ", value)
+        values = value.split(" ")
         name_field = values[0]
         type_field = "varchar"
         default = None

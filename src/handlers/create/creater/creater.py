@@ -156,9 +156,16 @@ class SQLAlchemyModelCreater(IModelCreater):
         type_imports.add(COLUMN)
 
         for field in table.fields:
-            type = field.type.upper()
-            type_imports.add(type.split("(")[0])
+            type = field.type.lower()
+            type_with_any = type.split("(")
+            type = type_with_any[0]
+            type = UPPER_TYPES.get(type, type.title())
+            
+            type_imports.add(type)
             content += f"{TABULATION}{field.name} = {COLUMN}({type}"
+            if len(type_with_any) > 1:
+                content += f"({type_with_any[1]}"
+                
             if field.is_fk:
                 type_imports.add(FOREIGNKEY)
                 if field.fk_table:

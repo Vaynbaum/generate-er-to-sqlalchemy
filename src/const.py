@@ -1,7 +1,6 @@
 NAME_FILE_INI = "gemod.ini"
 NAME_FILE_BASE = "base.py"
 
-
 KW_APP="app"
 KW_BASE="base"
 KW_INIT_PY="init_py"
