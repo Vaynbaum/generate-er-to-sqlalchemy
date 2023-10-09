@@ -19,7 +19,10 @@ class RepationOneToMany(IRelation):
             field_one = ASSOCIATIONS[one]
             table_many = tables[data[field_many]]
             table_one = tables[data[field_one]]
+            id_field = data["field"]
             for field in table_many.fields:
-                if field.name == field_id_from_tablename(table_one.tablename):
+                if field.id == id_field or field.name == field_id_from_tablename(
+                    table_one.tablename
+                ):
                     field.fk_table = table_one
         return tables

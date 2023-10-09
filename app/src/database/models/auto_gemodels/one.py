@@ -7,8 +7,8 @@ from src.database.base import Base
 
 
 
-class AutoModelSubject(Base):
-    __tablename__ = 'subjects'
+class AutoModelOne(Base):
+    __tablename__ = 'ones'
     id = Column(INTEGER, primary_key=True)
-    title = Column(VARCHAR, unique=True)
+    name = Column(VARCHAR(255), unique=True)
     # relations

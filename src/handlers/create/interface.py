@@ -16,10 +16,14 @@ class TableFromDiagramSchema(BaseModel):
 
 
 class FieldDiagramSchema(BaseModel):
+    id: str | None = None
     name: str
     type: str
     is_primary: bool = False
     is_fk: bool = False
+    is_not_null: bool = False
+    is_unique: bool = False
+    default: str | None = None
     fk_table: TableFromDiagramSchema | None = None
 
 
@@ -31,5 +35,5 @@ class IDiagramParser(ABC):
 
 class IModelCreater(ABC):
     @abstractmethod
-    def handle(self, tables: list[TableFromDiagramSchema], path_ini_file: str):
+    def handle(self, tables: list[TableFromDiagramSchema], path_ini_file: str, id: str):
         raise NotImplementedError()

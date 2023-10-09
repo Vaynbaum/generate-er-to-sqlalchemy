@@ -2,10 +2,12 @@
 
 from sqlalchemy import {imports}
 from {base_path} import Base
-
+# any_imports
 {any_imports}
 
 
 class {class_name}(Base):
     __tablename__ = '{table_name}'
 {fields}
+    # relations
+{relations}

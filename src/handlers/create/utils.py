@@ -1,3 +1,4 @@
+import os
 import re
 
 
@@ -8,7 +9,10 @@ PATTERN_INI_FILE = re.compile(r"\[(.*?)\]\s+([\w\W]*?)(?=\n\[|$)")
 def camel_to_snake(s: str):
     return PATTERN_CAMEL_SNAKE.sub("_", s).lower()
 
-
+def path_to_python_import(path:str):
+    path = path.replace(os.sep, '.')
+    return path
+    
 def clear_str_from_tag(s: str):
     return re.sub(r"<.*?>", "", s).replace(" ", "")
 

@@ -1,0 +1,5 @@
+DIR_TEMPLATES = "templates"
+FILE_TMPLT_AUTO_GM = "auto_gemodel_template.py"
+FILE_TMPLT_USER_GM = "user_gemodel_template.py"
+PREFIX_CLASS = "AutoModel"
+IMPORT_RELATIONSHIP = "from sqlalchemy.orm import relationship, backref"

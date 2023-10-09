@@ -1,11 +1,18 @@
+"e56a1550-8fbb-45ad-956c-1786394a9013"
 # Auto generated model. Don't add a custom description here 
 
-from sqlalchemy import {imports}
-from {base_path} import Base
+from sqlalchemy import Column, ForeignKey, VARCHAR, INTEGER
+from sqlalchemy.orm import relationship, backref
 
-{any_imports}
+from src.database.base import Base
+# any_imports
+from src.database.models.user_gemodels.teacher import Teacher
 
 
-class {class_name}(Base):
-    __tablename__ = '{table_name}'
-{fields}
+
+class AutoModelInfoTeacher(Base):
+    __tablename__ = 'info_teachers'
+    teacher_id = Column(INTEGER, ForeignKey(Teacher.id), primary_key=True)
+    patronymic = Column(VARCHAR(255))
+    # relations
+    teacher = relationship(Teacher, backref=backref("info_teachers", cascade="all, delete-orphan"))

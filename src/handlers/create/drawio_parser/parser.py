@@ -19,9 +19,10 @@ class DrawERParser(IDiagramParser):
         return None
 
     def __proccess_ids(self, name_id: str, cell: dict, cells: dict, field_ids: dict):
-        if not cell["data"][name_id] in cells:
-            id = cell["data"][name_id]
+        id = cell["data"][name_id]
+        if not id in cells:
             cell["data"][name_id] = field_ids[id]["parent"]
+            cell["data"]["field"] = id
 
     def __parse_data_from_diagram(self, diagram: Element):
         cells = {}
@@ -62,4 +63,4 @@ class DrawERParser(IDiagramParser):
         cells = self.__parse_data_from_diagram(diagram)
         tables = self.__cell_proccesser.proccess(cells)
         tables = self.__arrow_proccesser.proccess(cells, tables)
-        return [table for table in tables.values()]
+        return [table for table in tables.values()], diagram.attrib["id"]

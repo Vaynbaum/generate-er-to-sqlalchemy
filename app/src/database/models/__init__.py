@@ -1,0 +1,10 @@
+from src.database.models.user_gemodels.mark import Mark as Mark
+from src.database.models.user_gemodels.subject import Subject as Subject
+from src.database.models.user_gemodels.teacher import Teacher as Teacher
+from src.database.models.user_gemodels.subject_teacher_link import SubjectTeacherLink as SubjectTeacherLink
+from src.database.models.user_gemodels.info_teacher import InfoTeacher as InfoTeacher
+from src.database.models.user_gemodels.group import Group as Group
+from src.database.models.user_gemodels.one import One as One
+from src.database.models.user_gemodels.teacher_group_link import TeacherGroupLink as TeacherGroupLink
+from src.database.models.user_gemodels.role import Role as Role
+from src.database.models.user_gemodels.record import Record as Record

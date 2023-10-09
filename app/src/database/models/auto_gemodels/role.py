@@ -1,4 +1,4 @@
-"e56a1550-8fbb-45ad-956c-1786394a9013"
+"_qRT9DB5e9rWe48j42IU"
 # Auto generated model. Don't add a custom description here 
 
 from sqlalchemy import Column, VARCHAR, INTEGER
@@ -7,8 +7,8 @@ from src.database.base import Base
 
 
 
-class AutoModelSubject(Base):
-    __tablename__ = 'subjects'
+class AutoModelRole(Base):
+    __tablename__ = 'roles'
     id = Column(INTEGER, primary_key=True)
-    title = Column(VARCHAR, unique=True)
+    name = Column(VARCHAR(255), unique=True)
     # relations

@@ -10,7 +10,7 @@
         "request": "launch",
         "program": "${file}",
         "console": "integratedTerminal",
-        "args": ["create", "-a=app", "-e=er.drawio", "-p=1"],
+        "args": ["create", "-a=app", "-e=er.drawio"],
         "justMyCode": true
     }]
 }
