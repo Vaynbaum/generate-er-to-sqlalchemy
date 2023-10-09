@@ -1,7 +1,7 @@
 "e56a1550-8fbb-45ad-956c-1786394a9013"
 # Auto generated model. Don't add a custom description here 
 
-from sqlalchemy import ForeignKey, Column, VARCHAR, Integer
+from sqlalchemy import Column, VARCHAR, ForeignKey, Integer
 from sqlalchemy.orm import relationship, backref
 
 from src.database.base import Base

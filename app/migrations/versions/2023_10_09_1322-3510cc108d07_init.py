@@ -1,8 +1,8 @@
 """Init
 
-Revision ID: 3ff03f71f6a0
+Revision ID: 3510cc108d07
 Revises: 
-Create Date: 2023-10-09 12:55:55.952041
+Create Date: 2023-10-09 13:22:12.150951
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3ff03f71f6a0'
+revision = '3510cc108d07'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -31,7 +31,7 @@ def upgrade() -> None:
     sa.UniqueConstraint('name')
     )
     op.create_table('roles',
-    sa.Column('id', sa.INTEGER(), nullable=False),
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
@@ -67,9 +67,9 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('teacher_id')
     )
     op.create_table('records',
-    sa.Column('id', sa.INTEGER(), nullable=False),
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=255), nullable=True),
-    sa.Column('owner_id', sa.INTEGER(), nullable=True),
+    sa.Column('owner_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['teachers.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
