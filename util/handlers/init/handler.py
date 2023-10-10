@@ -24,7 +24,7 @@ class InitHandler(IHandler):
     def __define_paths(self, config: ArgConfig, app_path: str):
         app_path = os.path.abspath(app_path)
         if config.dir_database:
-            dir_database = os.path.abspath(config.dir_database)
+            dir_database = os.path.abspath(os.path.join(app_path, config.dir_database))
         else:
             dir_database = os.path.join(app_path, DEFAULT_DATABASE_PATH)
         return app_path, dir_database
@@ -78,7 +78,5 @@ class InitHandler(IHandler):
 
     def __create_directory(self, path: str):
         path += "\\"
-        is_exists = not os.path.exists(os.path.dirname(path))
-        if is_exists:
+        if not os.path.exists(os.path.dirname(path)):
             os.makedirs(os.path.dirname(path))
-        return is_exists
