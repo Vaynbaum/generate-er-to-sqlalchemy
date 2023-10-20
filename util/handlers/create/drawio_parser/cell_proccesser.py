@@ -1,4 +1,4 @@
-from handlers.create.drawio_parser.const import TABLE
+from handlers.create.drawio_parser.const import *
 from handlers.create.drawio_parser.field_proccesser import (
     DrawERFieldProccesser,
 )
@@ -15,9 +15,15 @@ class DrawERCellProccesser:
         for k, cell in cells.items():
             if cell["type"] == TABLE:
                 name: str = cell["data"]["value"]
-                class_name = name[:-1]
+
                 tablename = camel_to_snake(name)
-                file_name = f"{tablename[:-1]}.py"
+                t = tablename
+                if name[IND_LONG_WORD_END:] == LONG_WORD_END:
+                    name = f"{name[:IND_LONG_WORD_END]}{SHORT_WORD_END}"
+                    t = f"{t[:IND_LONG_WORD_END]}{SHORT_WORD_END}"
+                class_name = name[:IND_SHORT_WORD_END]
+                file_name = f"{t[:IND_SHORT_WORD_END]}.{PY_FILE_EXTENSION}"
+
                 fields = []
                 for field in cell["cells"]:
                     if "value" in field["data"]:
