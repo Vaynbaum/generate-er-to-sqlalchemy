@@ -1,24 +1,24 @@
 # GenMod
-SQLAlchemy ORM Model generator from ER diagram
+Генератор ORM-моделей SQLAlchemy на основе ER-диаграммы
 
-## How to use
-1. Download the project
-2. Go to the `util` directory
-3. To install the necessary dependencies, enter the command in the terminal
+## Как использовать
+1. Загрузите проект
+2. Перейдите в каталог `util`
+3. Чтобы установить необходимые зависимости, введите команду в терминале
 ```
 > pip install -r requirements.txt
 ```
-4. For initialization in the application, enter the command in the terminal
+4. Для инициализации в приложении введите команду в терминале
 ```
 > python main.py init -a=../example/app -d=src/database
 ```
-5. To create models from an ER diagram, enter the command in the terminal
+5. Чтобы создать модели на основе диаграммы ER, введите команду в терминале
 ```
 > python main.py create -a=../example/app -e=../example/er.drawio -p=Page-1
 ```
-Where:
-1. `../example/app` is the path to the app
-2. `../example/er.drawio` is the path to the file with the ER diagram
-3. `src/database` is an optional path to the directory with database in the application.
-By default, the directory with database will be created in the root of the application
-4. `Page-1` is the name of the page with the diagram in drawio
+Где:
+1. `../example/app` - это путь к приложению
+2. `../example/er.drawio` - это путь к файлу с диаграммой ER
+3. `src/database` - это необязательный путь к каталогу с базой данных в приложении.
+По умолчанию каталог с базой данных будет создан в корневом каталоге приложения
+4. `Page-1` - это название страницы со схемой в drawio
